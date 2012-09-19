@@ -3,7 +3,7 @@
     "description": "Sesh is an abstraction layer for PHP Session.",
     "require": {
         "php": ">=5.0",
-        "dbal": "0.*"
+        "succinct/dbal": "0.*"
     },
     "autoload": {
         "psr-0": {
