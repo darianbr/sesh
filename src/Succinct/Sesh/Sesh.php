@@ -20,4 +20,12 @@ class Sesh {
 
 	}
 
+	/**
+	 * @param $option string|array
+	 * @return bool
+	 */
+	public function __set($option, $value) {
+
+	}
+
 }
