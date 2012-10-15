@@ -3,6 +3,8 @@
 namespace Succinct\Sesh;
 
 class Sesh {
+
+	protected $data = NULL;
 	
 	public function __construct() {
 		if (headers_sent()) {
@@ -17,7 +19,13 @@ class Sesh {
 	}
 
 	public function set($option, $value) {
+		// TODO: Handle invalid values and arrays
+		$this->data[$option] = $value;
+		return TRUE;
+	}
 
+	public function get($option) {
+		return array_key_exists($option, $this->data) ? $this->data[$option] : NULL;
 	}
 
 	/**
@@ -25,7 +33,14 @@ class Sesh {
 	 * @return bool
 	 */
 	public function __set($option, $value) {
-
+		return $this->set($option, $value);
 	}
 
+	/**
+	 * @param $option string|array
+	 * @return mixed
+	 */
+	public function __get($option) {
+		return $this->get($option);
+	}
 }
