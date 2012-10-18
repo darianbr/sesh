@@ -4,18 +4,20 @@ namespace Succinct\Sesh;
 
 class Sesh {
 
-	protected $data = NULL;
+	protected $data = array();
 	
 	public function __construct() {
-		if (headers_sent()) {
-			throw new \RuntimeException('Failed to initialise session. Headers already sent');
-		}
 
-		if (!session_start()) {
-			throw new \RuntimeException('Failed to initialise session.');
-		}
+		// TODO: handle situations where session already started
+		//if (PHP_SESSION_ACTIVE !== session_status()) {
+			if (headers_sent()) {
+				throw new \RuntimeException('Failed to initialise session. Headers already sent');
+			}
 
-		echo 'Welcome to sesh!' . PHP_EOL;
+			if (!session_start()) {
+				throw new \RuntimeException('Failed to initialise session.');
+			}
+		//}
 	}
 
 	public function set($option, $value) {
