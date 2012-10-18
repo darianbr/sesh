@@ -21,7 +21,7 @@ class Sesh {
 	public function set($option, $value) {
 		// TODO: Handle invalid values and arrays
 		$this->data[$option] = $value;
-		return TRUE;
+		return array_key_exists($option, $this->data);
 	}
 
 	public function get($option) {
