@@ -1,5 +1,5 @@
 {
-    "hash": "f7cd83a15be0d7be6b2895555439e50b",
+    "hash": "0591684eb29da8d002637cd84650a100",
     "packages": [
 
     ],
@@ -50,16 +50,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "1.2.7",
+            "version": "1.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "git://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "1.2.7"
+                "reference": "ec7f6f388ca315b6520f61be670ff82fa6ce68fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sebastianbergmann/php-code-coverage/archive/1.2.7.zip",
-                "reference": "1.2.7",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ec7f6f388ca315b6520f61be670ff82fa6ce68fb",
+                "reference": "ec7f6f388ca315b6520f61be670ff82fa6ce68fb",
                 "shasum": ""
             },
             "require": {
@@ -72,7 +72,7 @@
                 "ext-dom": "*",
                 "ext-xdebug": ">=2.0.5"
             },
-            "time": "2012-12-02 14:54:55",
+            "time": "2013-01-07 10:45:42",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -285,12 +285,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sebastianbergmann/phpunit.git",
-                "reference": "1420606ec2d5a5bd0877385f21f54009a08759aa"
+                "reference": "feaf1d0fd2d820688fd3e6c68cf5658ae8109450"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1420606ec2d5a5bd0877385f21f54009a08759aa",
-                "reference": "1420606ec2d5a5bd0877385f21f54009a08759aa",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/feaf1d0fd2d820688fd3e6c68cf5658ae8109450",
+                "reference": "feaf1d0fd2d820688fd3e6c68cf5658ae8109450",
                 "shasum": ""
             },
             "require": {
@@ -312,7 +312,7 @@
                 "ext-tokenizer": "*",
                 "phpunit/php-invoker": ">=1.1.0,<1.2.0"
             },
-            "time": "2013-02-03 06:29:48",
+            "time": "2013-02-04 10:47:22",
             "bin": [
                 "composer/bin/phpunit"
             ],
@@ -448,6 +448,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "phpunit/phpunit": 20,
+        "phpunit/php-code-coverage": 20,
         "phake/phake": 20
     }
 }

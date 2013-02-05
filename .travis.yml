@@ -7,4 +7,6 @@ php:
 install:
   - composer self-update
   - composer install --dev
-script:  ./vendor/bin/phpunit test/
+script: 
+  - ./vendor/bin/phpunit test/
+  - ./vendor/bin/phpunit coverage-html report test
