@@ -33,7 +33,7 @@ $session_id = $this->sesh->id();
 $this->sesh->foo = 'bar';
 
 // retrieve the value of the variable 'foo'
-$vale = $this->sesh->foo;
+$value = $this->sesh->foo;
 ```
 
 ### Setting multiple values at once and retrieve them individually
@@ -67,7 +67,7 @@ isset($this->sesh->foo);
 unset($this->sesh->foo);
 
 // alternate way to remove values
-$this->sesh->remove(foo);
+$this->sesh->remove('foo');
 ```
 
 ### Remove Multiple variables at once
