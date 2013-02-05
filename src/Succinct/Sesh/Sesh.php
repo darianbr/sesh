@@ -19,7 +19,9 @@ class Sesh {
 			}
 		}
 
-		$this->data = array_key_exists(self::SESSION_CONTAINER, $_SESSION) ? $_SESSION[self::SESSION_CONTAINER] : array();
+		$this->data = array_key_exists(self::SESSION_CONTAINER, $_SESSION) 
+			? $_SESSION[self::SESSION_CONTAINER]
+			: array();
 	}
 
 	public function __destruct() {
@@ -81,7 +83,9 @@ class Sesh {
 	 */
 	public function get($option) {
 
-		return array_key_exists($option, $this->data) ? $this->data[$option] : NULL;
+		return array_key_exists($option, $this->data) 
+			? $this->data[$option]
+			: NULL;
 	}
 
 	/**
@@ -107,5 +111,6 @@ class Sesh {
 	public function destroy() {
 
 		session_destroy();
+		session_write_close();
 	}
 }
