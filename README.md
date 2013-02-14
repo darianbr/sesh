@@ -83,4 +83,8 @@ $this->sesh->destroy();
 
 ## Current Build Status
 
-[![Build Status](https://travis-ci.org/darianbrown/sesh.png)](https://travis-ci.org/darianbrown/sesh)
+[![Build Status][status-icon]](http://travis-ci.org/darianbrown/sesh)
+[![Test Coverage][coverage-icon]](http://darianbrown.github.com/sesh/artifacts/tests/coverage)
+
+[status-icon]: https://raw.github.com/darianbrown/sesh/gh-pages/artifacts/images/icecave/regular/build-status.png
+[coverage-icon]: https://raw.github.com/darianbrown/sesh/gh-pages/artifacts/images/icecave/regular/coverage.png
