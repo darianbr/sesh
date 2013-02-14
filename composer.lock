@@ -1,27 +1,87 @@
 {
-    "hash": "0591684eb29da8d002637cd84650a100",
+    "hash": "32443f3fb0f1926a644ca77825b956b0",
     "packages": [
 
     ],
     "packages-dev": [
         {
-            "name": "phake/phake",
-            "version": "dev-master",
+            "name": "icecave/archer",
+            "version": "dev-release/0.1.0",
             "source": {
                 "type": "git",
-                "url": "git://github.com/mlively/Phake.git",
-                "reference": "d39c2c83caf89675aa3b8cff2dae337d076617a0"
+                "url": "https://github.com/IcecaveStudios/archer.git",
+                "reference": "a36860347655a975f39986d5efe004f7d91d368f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/mlively/Phake/archive/d39c2c83caf89675aa3b8cff2dae337d076617a0.zip",
-                "reference": "d39c2c83caf89675aa3b8cff2dae337d076617a0",
+                "url": "https://api.github.com/repos/IcecaveStudios/archer/zipball/a36860347655a975f39986d5efe004f7d91d368f",
+                "reference": "a36860347655a975f39986d5efe004f7d91d368f",
+                "shasum": ""
+            },
+            "require": {
+                "phake/phake": ">=1.0,<2.0",
+                "symfony/console": ">=2.0,<3.0",
+                "symfony/process": ">=2.0,<3.0"
+            },
+            "suggest": {
+                "ext-openssl": "OpenSSL is required to encrypt GitHub OAuth tokens for artifact publication."
+            },
+            "time": "2013-02-14 06:33:09",
+            "bin": [
+                "bin/archer",
+                "bin/woodhouse"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Icecave\\Archer": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Erin Millard",
+                    "email": "ezzatron@gmail.com",
+                    "homepage": "http://ezzatron.com/"
+                },
+                {
+                    "name": "James Harris",
+                    "email": "james.harris@icecave.com.au"
+                }
+            ],
+            "description": "PHP testing and continuous integration by convention.",
+            "homepage": "https://github.com/IcecaveStudios/archer",
+            "keywords": [
+                "testing",
+                "phpunit",
+                "test",
+                "unit",
+                "phake",
+                "coverage",
+                "artifacts"
+            ]
+        },
+        {
+            "name": "phake/phake",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/mlively/Phake.git",
+                "reference": "v1.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/mlively/Phake/zipball/v1.0.3",
+                "reference": "v1.0.3",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.0"
             },
-            "time": "2013-01-07 16:53:25",
+            "time": "2012-05-14 08:06:51",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -49,379 +109,28 @@
             ]
         },
         {
-            "name": "phpunit/php-code-coverage",
-            "version": "1.2.x-dev",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "ec7f6f388ca315b6520f61be670ff82fa6ce68fb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ec7f6f388ca315b6520f61be670ff82fa6ce68fb",
-                "reference": "ec7f6f388ca315b6520f61be670ff82fa6ce68fb",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "phpunit/php-file-iterator": ">=1.3.0@stable",
-                "phpunit/php-token-stream": ">=1.1.3@stable",
-                "phpunit/php-text-template": ">=1.1.1@stable"
-            },
-            "suggest": {
-                "ext-dom": "*",
-                "ext-xdebug": ">=2.0.5"
-            },
-            "time": "2013-01-07 10:45:42",
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "PHP/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                ""
-            ],
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Bergmann",
-                    "email": "sb@sebastian-bergmann.de",
-                    "role": "lead"
-                }
-            ],
-            "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
-            "homepage": "https://github.com/sebastianbergmann/php-code-coverage",
-            "keywords": [
-                "testing",
-                "coverage",
-                "xunit"
-            ]
-        },
-        {
-            "name": "phpunit/php-file-iterator",
-            "version": "1.3.3",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "1.3.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/sebastianbergmann/php-file-iterator/zipball/1.3.3",
-                "reference": "1.3.3",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "time": "2012-10-11 04:44:38",
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "File/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                ""
-            ],
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Bergmann",
-                    "email": "sb@sebastian-bergmann.de",
-                    "role": "lead"
-                }
-            ],
-            "description": "FilterIterator implementation that filters files based on a list of suffixes.",
-            "homepage": "http://www.phpunit.de/",
-            "keywords": [
-                "filesystem",
-                "iterator"
-            ]
-        },
-        {
-            "name": "phpunit/php-text-template",
-            "version": "1.1.4",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/sebastianbergmann/php-text-template.git",
-                "reference": "1.1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/sebastianbergmann/php-text-template/zipball/1.1.4",
-                "reference": "1.1.4",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "time": "2012-10-31 11:15:28",
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "Text/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                ""
-            ],
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Bergmann",
-                    "email": "sb@sebastian-bergmann.de",
-                    "role": "lead"
-                }
-            ],
-            "description": "Simple template engine.",
-            "homepage": "https://github.com/sebastianbergmann/php-text-template/",
-            "keywords": [
-                "template"
-            ]
-        },
-        {
-            "name": "phpunit/php-timer",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/sebastianbergmann/php-timer.git",
-                "reference": "1.0.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/sebastianbergmann/php-timer/zipball/1.0.4",
-                "reference": "1.0.4",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "time": "2012-10-11 04:45:58",
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "PHP/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                ""
-            ],
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Bergmann",
-                    "email": "sb@sebastian-bergmann.de",
-                    "role": "lead"
-                }
-            ],
-            "description": "Utility class for timing",
-            "homepage": "http://www.phpunit.de/",
-            "keywords": [
-                "timer"
-            ]
-        },
-        {
-            "name": "phpunit/php-token-stream",
-            "version": "1.1.5",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "1.1.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/sebastianbergmann/php-token-stream/zipball/1.1.5",
-                "reference": "1.1.5",
-                "shasum": ""
-            },
-            "require": {
-                "ext-tokenizer": "*",
-                "php": ">=5.3.3"
-            },
-            "time": "2012-10-11 04:47:14",
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "PHP/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                ""
-            ],
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Bergmann",
-                    "email": "sb@sebastian-bergmann.de",
-                    "role": "lead"
-                }
-            ],
-            "description": "Wrapper around PHP's tokenizer extension.",
-            "homepage": "http://www.phpunit.de/",
-            "keywords": [
-                "tokenizer"
-            ]
-        },
-        {
-            "name": "phpunit/phpunit",
-            "version": "3.7.x-dev",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/sebastianbergmann/phpunit.git",
-                "reference": "feaf1d0fd2d820688fd3e6c68cf5658ae8109450"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/feaf1d0fd2d820688fd3e6c68cf5658ae8109450",
-                "reference": "feaf1d0fd2d820688fd3e6c68cf5658ae8109450",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "ext-dom": "*",
-                "ext-pcre": "*",
-                "ext-reflection": "*",
-                "ext-spl": "*",
-                "phpunit/php-file-iterator": ">=1.3.1",
-                "phpunit/php-text-template": ">=1.1.1",
-                "phpunit/php-code-coverage": ">=1.2.1",
-                "phpunit/phpunit-mock-objects": ">=1.2.0,<1.3.0",
-                "symfony/yaml": ">=2.1.0,<2.2.0",
-                "phpunit/php-timer": ">=1.0.2,<1.1.0"
-            },
-            "suggest": {
-                "ext-json": "*",
-                "ext-simplexml": "*",
-                "ext-tokenizer": "*",
-                "phpunit/php-invoker": ">=1.1.0,<1.2.0"
-            },
-            "time": "2013-02-04 10:47:22",
-            "bin": [
-                "composer/bin/phpunit"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.7.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "PHPUnit/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                "",
-                "../../symfony/yaml/"
-            ],
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
-                }
-            ],
-            "description": "The PHP Unit Testing framework.",
-            "homepage": "http://www.phpunit.de/",
-            "keywords": [
-                "testing",
-                "phpunit",
-                "xunit"
-            ]
-        },
-        {
-            "name": "phpunit/phpunit-mock-objects",
-            "version": "1.2.3",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "1.2.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/sebastianbergmann/phpunit-mock-objects/archive/1.2.3.zip",
-                "reference": "1.2.3",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "phpunit/php-text-template": ">=1.1.1@stable"
-            },
-            "suggest": {
-                "ext-soap": "*"
-            },
-            "time": "2013-01-13 10:24:48",
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "PHPUnit/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                ""
-            ],
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Bergmann",
-                    "email": "sb@sebastian-bergmann.de",
-                    "role": "lead"
-                }
-            ],
-            "description": "Mock Object library for PHPUnit",
-            "homepage": "https://github.com/sebastianbergmann/phpunit-mock-objects/",
-            "keywords": [
-                "mock",
-                "xunit"
-            ]
-        },
-        {
-            "name": "symfony/yaml",
+            "name": "symfony/console",
             "version": "v2.1.7",
-            "target-dir": "Symfony/Component/Yaml",
+            "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Yaml",
+                "url": "https://github.com/symfony/Console",
                 "reference": "v2.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Yaml/archive/v2.1.7.zip",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/v2.1.7",
                 "reference": "v2.1.7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-17 21:21:51",
+            "time": "2013-01-17 15:20:05",
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "Symfony\\Component\\Yaml": ""
+                    "Symfony\\Component\\Console": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -438,7 +147,49 @@
                     "homepage": "http://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony Yaml Component",
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "symfony/process",
+            "version": "v2.1.7",
+            "target-dir": "Symfony/Component/Process",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Process",
+                "reference": "v2.1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/v2.1.7",
+                "reference": "v2.1.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2013-01-16 09:27:54",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Process": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
             "homepage": "http://symfony.com"
         }
     ],
@@ -447,8 +198,6 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "phpunit/phpunit": 20,
-        "phpunit/php-code-coverage": 20,
-        "phake/phake": 20
+        "icecave/archer": 20
     }
 }
