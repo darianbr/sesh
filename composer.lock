@@ -1,21 +1,21 @@
 {
-    "hash": "32443f3fb0f1926a644ca77825b956b0",
+    "hash": "f284e4925453313d5cca6bbb403a134e",
     "packages": [
 
     ],
     "packages-dev": [
         {
             "name": "icecave/archer",
-            "version": "dev-release/0.1.0",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/IcecaveStudios/archer.git",
-                "reference": "a36860347655a975f39986d5efe004f7d91d368f"
+                "reference": "0.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/IcecaveStudios/archer/zipball/a36860347655a975f39986d5efe004f7d91d368f",
-                "reference": "a36860347655a975f39986d5efe004f7d91d368f",
+                "url": "https://api.github.com/repos/IcecaveStudios/archer/zipball/0.1.2",
+                "reference": "0.1.2",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
             "suggest": {
                 "ext-openssl": "OpenSSL is required to encrypt GitHub OAuth tokens for artifact publication."
             },
-            "time": "2013-02-14 06:33:09",
+            "time": "2013-02-18 01:42:16",
             "bin": [
                 "bin/archer",
                 "bin/woodhouse"
@@ -197,7 +197,7 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "icecave/archer": 20
-    }
+    "stability-flags": [
+
+    ]
 }

@@ -1,0 +1,28 @@
+<phpunit 
+	bootstrap="./bootstrap.php"
+	colors="false"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	stopOnFailure="true">
+	<testsuites>
+		<testsuite name="My Test Suite">
+			<directory>../../test/suite</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<whitelist>
+			<directory>../../lib</directory>
+		</whitelist>
+	</filter>
+	<logging>
+		<log
+			type="coverage-text"
+			target="../../test/report/coverage.txt" />
+		<log
+			type="coverage-html"
+			target="../../test/report/coverage"
+			charset="UTF-8"
+			highlight="true" />
+	</logging>
+</phpunit>

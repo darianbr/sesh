@@ -2,10 +2,10 @@
     "name": "succinct/sesh",
     "description": "Sesh is an abstraction layer for PHP Session.",
     "require": {
-        "php": ">=5.2"
+        "php": ">=5.3.3"
     },
     "require-dev": {
-        "icecave/archer": "dev-release/0.1.0"
+        "icecave/archer": "~0.1"
     },
     "autoload": {
         "psr-0": {
