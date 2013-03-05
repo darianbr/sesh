@@ -3,9 +3,9 @@
 use Succinct\Sesh\Sesh;
 
 /**
- * @covers Succinct\Sesh\Sesh
+ * @runInSeparateProcess
  */
-class Sesh_Test extends PHPUnit_Framework_TestCase {
+class SeshTest extends PHPUnit_Framework_TestCase {
 
 	protected $sesh = NULL;
 
@@ -15,40 +15,25 @@ class Sesh_Test extends PHPUnit_Framework_TestCase {
 		$this->sesh = new Sesh();
 	}
 
-	/**
-     * @runInSeparateProcess
-     */
 	public function testId() {
 		$this->assertTrue('' !== $this->sesh->id());
 	}
 
-	/**
-     * @runInSeparateProcess
-     */
 	public function testSet() {
 		$bool = $this->sesh->set('foo', 'bar');
 		$this->assertTrue($bool);
 	}
 
-	/**
-     * @runInSeparateProcess
-     */
 	public function test_Set() {
 		$this->sesh->foo = 'bar';
 		$this->assertSame($this->sesh->foo, 'bar');
 	}
 
-	/**
-     * @runInSeparateProcess
-     */
 	public function testSetArray() {
 		$bool = $this->sesh->set(array('foo' => 'oof', 'bar' => 'rab', 'baz' => 'zab'));
 		$this->assertTrue($bool);
 	}
 
-	/**
-     * @runInSeparateProcess
-     */
 	public function testGet() {
 		$value = $this->sesh->get('foo');
 		$this->assertNull($value);
@@ -61,9 +46,6 @@ class Sesh_Test extends PHPUnit_Framework_TestCase {
 		$this->assertNull($this->sesh->get('someInvalidVariable'));
 	}
 
-	/**
-     * @runInSeparateProcess
-     */
 	public function test_Get() {
 		$value = $this->sesh->foo;
 		$this->assertNull($value);
@@ -75,11 +57,10 @@ class Sesh_Test extends PHPUnit_Framework_TestCase {
 		// make sure non-existant variable are returned as null
 		$this->assertNull($this->sesh->someInvalidVariable);
 	}
-
+	
 	/**
 	 * There is no get as array feature, but we want to test that the set with array method
 	 * 	is doing its jobs correctly
-     * @runInSeparateProcess
      */
 	public function testGetArray() {
 		$value = $this->sesh->get('foo');
@@ -97,9 +78,6 @@ class Sesh_Test extends PHPUnit_Framework_TestCase {
 		$this->assertSame($value, 'zab');
 	}
 
-	/**
-     * @runInSeparateProcess
-     */
 	public function test_Isset() {
 		$this->sesh->foo = 'bar';
 		
@@ -110,9 +88,6 @@ class Sesh_Test extends PHPUnit_Framework_TestCase {
 		$this->assertTrue(empty($this->sesh->someInvalidVariable));
 	}
 
-	/**
-     * @runInSeparateProcess
-     */
 	public function test_Unset() {
 		$this->sesh->foo = 'bar';
 
@@ -122,9 +97,6 @@ class Sesh_Test extends PHPUnit_Framework_TestCase {
 		$this->assertTrue(empty($this->sesh->foo));
 	}
 
-	/**
-     * @runInSeparateProcess
-     */
 	public function testRemove() {
 		$this->sesh->foo = 'bar';
 
@@ -136,9 +108,6 @@ class Sesh_Test extends PHPUnit_Framework_TestCase {
 		$this->assertNull($this->sesh->foo);
 	}
 
-	/**
-     * @runInSeparateProcess
-     */
 	public function testRemoveArray() {
 		$bool = $this->sesh->set(array('foo' => 'oof', 'bar' => 'rab', 'baz' => 'zab'));
 
@@ -161,9 +130,6 @@ class Sesh_Test extends PHPUnit_Framework_TestCase {
 		$this->assertNull($this->sesh->remove('someInvalidVariable'));
 	}
 
-	/**
-     * @runInSeparateProcess
-     */
 	public function testDestroy() {
 		$this->sesh->destroy();
 
