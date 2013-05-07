@@ -1,4 +1,4 @@
-<phpunit 
+<phpunit
 	bootstrap="./bootstrap.php"
 	colors="false"
 	convertErrorsToExceptions="true"
@@ -12,7 +12,7 @@
 	</testsuites>
 	<filter>
 		<whitelist>
-			<directory>../../lib</directory>
+			<directory>../../src</directory>
 		</whitelist>
 	</filter>
 	<logging>
