@@ -2,115 +2,122 @@
 
 namespace Succinct\Sesh;
 
-class Sesh {
+class Sesh
+{
+    protected $data = array();
+    const SESSION_CONTAINER = 'session_container_key';
 
-	protected $data = array();
-	const SESSION_CONTAINER = 'session_container_key';
-	
-	public function __construct() {
+    public function __construct()
+    {
+        if ('' === session_id()) {
+            if (headers_sent()) {
+                throw new \RuntimeException('Failed to initialise session. Headers already sent');
+            }
 
-		if ('' === session_id()) {
-			if (headers_sent()) {
-				throw new \RuntimeException('Failed to initialise session. Headers already sent');
-			}
+            if (!session_start()) {
+                throw new \RuntimeException('Failed to initialise session.');
+            }
+        }
 
-			if (!session_start()) {
-				throw new \RuntimeException('Failed to initialise session.');
-			}
-		}
+        $this->data = array_key_exists(self::SESSION_CONTAINER, $_SESSION)
+            ? $_SESSION[self::SESSION_CONTAINER]
+            : array();
+    }
 
-		$this->data = array_key_exists(self::SESSION_CONTAINER, $_SESSION) 
-			? $_SESSION[self::SESSION_CONTAINER]
-			: array();
-	}
+    public function __destruct()
+    {
+        $_SESSION[self::SESSION_CONTAINER] = $this->data;
+        $this->data = NULL;
+    }
 
-	public function __destruct() {
+    /**
+     * @param $option string|array
+     * @return bool
+     */
+    public function __set($option, $value)
+    {
+        return $this->set($option, $value);
+    }
 
-		$_SESSION[self::SESSION_CONTAINER] = $this->data;
-		$this->data = NULL;
-	}
+    /**
+     * @param $option string
+     * @return mixed
+     */
+    public function __get($option)
+    {
+        return $this->get($option);
+    }
 
-	/**
-	 * @param $option string|array
-	 * @return bool
-	 */
-	public function __set($option, $value) {
+    public function __isset($option)
+    {
+        return array_key_exists($option, $this->data);
+    }
 
-		return $this->set($option, $value);
-	}
+    public function __unset($option)
+    {
+        return $this->remove($option);
+    }
 
-	/**
-	 * @param $option string
-	 * @return mixed
-	 */
-	public function __get($option) {
+    public function id()
+    {
+        return session_id();
+    }
 
-		return $this->get($option);
-	}
+    /**
+     * @param $option string|array
+     * @return bool
+     */
+    public function set($option, $value=array())
+    {
+        if ($option === (array) $option) {
+            foreach ($option as $key => $value) {
+                $this->set($key, $value);
+            }
 
-	public function __isset($option) {
-		return array_key_exists($option, $this->data);
-	}
+            return TRUE;
+        } else {
+            $this->data[$option] = $value;
 
-	public function __unset($option) {
-		return $this->remove($option);
-	}
+            return array_key_exists($option, $this->data);
+        }
+    }
 
-	public function id() {
-		return session_id();
-	}
+    /**
+     * @param $option string
+     * @return mixed
+     */
+    public function get($option)
+    {
+        return array_key_exists($option, $this->data)
+            ? $this->data[$option]
+            : NULL;
+    }
 
-	/**
-	 * @param $option string|array
-	 * @return bool
-	 */
-	public function set($option, $value=array()) {
+    /**
+     * @param $option string|array
+     * @return bool
+     */
+    public function remove($option)
+    {
+        if ($option === (array) $option) {
+            foreach ($option as $key) {
+                $this->remove($key);
+            }
 
-		if ($option === (array) $option) {
-			foreach ($option as $key => $value) {
-				$this->set($key, $value);
-			}
-			return TRUE;
-		} else {
-			$this->data[$option] = $value;
-			return array_key_exists($option, $this->data);
-		}
-	}
+            return TRUE;
+        } elseif (array_key_exists($option, $this->data)) {
+            $this->data[$option] = NULL;
+            unset($this->data[$option]);
 
-	/**
-	 * @param $option string
-	 * @return mixed
-	 */
-	public function get($option) {
+            return !array_key_exists($option, $this->data);
+        } else {
+            return NULL;
+        }
+    }
 
-		return array_key_exists($option, $this->data) 
-			? $this->data[$option]
-			: NULL;
-	}
-
-	/**
-	 * @param $option string|array
-	 * @return bool
-	 */
-	public function remove($option) {
-
-		if ($option === (array) $option) {
-			foreach ($option as $key) {
-				$this->remove($key);
-			}
-			return TRUE;
-		} else if (array_key_exists($option, $this->data)) {
-			$this->data[$option] = NULL;
-			unset($this->data[$option]);
-			return !array_key_exists($option, $this->data);
-		} else {
-			return NULL;
-		}
-	}
-
-	public function destroy() {
-
-		session_destroy();
-		session_write_close();
-	}
+    public function destroy()
+    {
+        session_destroy();
+        session_write_close();
+    }
 }
