@@ -1,0 +1,12 @@
+language: php
+
+php:
+  - 5.3.3
+  - 5.3
+  - 5.4
+  - 5.5
+
+install:
+    - composer install --dev --prefer-dist --no-interaction
+script:
+    - ./vendor/bin/phpunit -c ./test/suite/phpunit.xml
