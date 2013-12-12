@@ -3,7 +3,7 @@
 use Succinct\Sesh\Sesh;
 
 /**
- * @runInSeparateProcess
+ * @runTestsInSeparateProcesses
  */
 class SeshTest extends PHPUnit_Framework_TestCase
 {
