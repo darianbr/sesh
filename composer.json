@@ -5,7 +5,7 @@
         "php": ">=5.3.3"
     },
     "require-dev": {
-        "icecave/archer": "~0.1"
+	"phpunit/phpunit": "3.7.*"
     },
     "autoload": {
         "psr-0": {

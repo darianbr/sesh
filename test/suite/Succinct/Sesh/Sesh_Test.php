@@ -12,7 +12,7 @@ class SeshTest extends PHPUnit_Framework_TestCase {
 	protected function setUp() {
 		parent::setUp();
 
-		$this->sesh = new Sesh();
+		$this->sesh = new Sesh;
 	}
 
 	public function testId() {
@@ -57,7 +57,7 @@ class SeshTest extends PHPUnit_Framework_TestCase {
 		// make sure non-existant variable are returned as null
 		$this->assertNull($this->sesh->someInvalidVariable);
 	}
-	
+
 	/**
 	 * There is no get as array feature, but we want to test that the set with array method
 	 * 	is doing its jobs correctly
@@ -80,7 +80,7 @@ class SeshTest extends PHPUnit_Framework_TestCase {
 
 	public function test_Isset() {
 		$this->sesh->foo = 'bar';
-		
+
 		$this->assertTrue(isset($this->sesh->foo));
 		$this->assertTrue(!empty($this->sesh->foo));
 
@@ -92,7 +92,7 @@ class SeshTest extends PHPUnit_Framework_TestCase {
 		$this->sesh->foo = 'bar';
 
 		unset($this->sesh->foo);
-		
+
 		$this->assertFalse(isset($this->sesh->foo));
 		$this->assertTrue(empty($this->sesh->foo));
 	}
