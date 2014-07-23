@@ -8,4 +8,4 @@ php:
 install:
     - composer install --dev --prefer-dist --no-interaction
 script:
-    - ./vendor/bin/phpunit -c ./test/suite/phpunit.xml
+    - phpunit -c ./test/suite/phpunit.xml
