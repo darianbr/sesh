@@ -2,7 +2,6 @@
 
 namespace Succinct\Sesh;
 
-use InvalidArgumentException;
 use PHPUnit_Framework_TestCase;
 
 /**
@@ -34,7 +33,7 @@ class SeshTest extends PHPUnit_Framework_TestCase
     public function testSetArray()
     {
         $this->assertTrue(
-            $this->sesh->set(['foo' => 'oof', 'bar' => 'rab', 'baz' => 'zab'])
+            $this->sesh->set(array('foo' => 'oof', 'bar' => 'rab', 'baz' => 'zab'))
         );
     }
 
@@ -63,7 +62,7 @@ class SeshTest extends PHPUnit_Framework_TestCase
     public function test_GetWithInvalidParameter()
     {
         $this->setExpectedException(
-            InvalidArgumentException::class,
+            'InvalidArgumentException',
             'Get must be a valid string.'
         );
 
@@ -82,7 +81,7 @@ class SeshTest extends PHPUnit_Framework_TestCase
 
         // check it set correctly
         $this->assertTrue(
-            $this->sesh->set(['foo' => 'oof', 'bar' => 'rab', 'baz' => 'zab'])
+            $this->sesh->set(array('foo' => 'oof', 'bar' => 'rab', 'baz' => 'zab'))
         );
 
         $this->assertSame($this->sesh->get('foo'), 'oof');
@@ -104,7 +103,7 @@ class SeshTest extends PHPUnit_Framework_TestCase
     public function test_IssetWithInvalidParameter()
     {
         $this->setExpectedException(
-            InvalidArgumentException::class,
+            'InvalidArgumentException',
             'Isset requires a valid string.'
         );
 
@@ -118,22 +117,22 @@ class SeshTest extends PHPUnit_Framework_TestCase
     {
         $this->sesh->foo = 'oof';
         $this->sesh->bar = 'rab';
-        $this->sesh->baz = ['qux' => 'xuq', 'doom' => 'mood'];
+        $this->sesh->baz = array('qux' => 'xuq', 'doom' => 'mood');
 
-        $result = [];
+        $result = array();
         foreach ($this->sesh as $key => $value) {
             $result[$key] = $value;
         }
 
         $this->assertSame(
-            [
+            array(
                 'foo' => 'oof',
                 'bar' => 'rab',
-                'baz' => [
+                'baz' => array(
                     'qux' => 'xuq',
                     'doom' => 'mood',
-                ],
-            ],
+                ),
+            ),
             $result
         );
     }
@@ -164,11 +163,11 @@ class SeshTest extends PHPUnit_Framework_TestCase
     {
         // check it set correctly
         $this->assertTrue(
-            $this->sesh->set(['foo' => 'oof', 'bar' => 'rab', 'baz' => 'zab'])
+            $this->sesh->set(array('foo' => 'oof', 'bar' => 'rab', 'baz' => 'zab'))
         );
 
         // test the remove was okay
-        $this->assertTrue($this->sesh->remove(['foo', 'bar']));
+        $this->assertTrue($this->sesh->remove(array('foo', 'bar')));
 
         // make sure we no longer store these values
         $this->assertNull($this->sesh->get('foo'));

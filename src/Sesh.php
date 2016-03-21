@@ -32,7 +32,7 @@ class Sesh implements IteratorAggregate
 
         $this->data = array_key_exists($this->sessionContainerKey, $_SESSION)
             ? $_SESSION[$this->sessionContainerKey]
-            : [];
+            : array();
     }
 
     public function __destruct()
@@ -114,7 +114,7 @@ class Sesh implements IteratorAggregate
     public function set($key, $value = null)
     {
         if (is_string($key)) {
-            $key = [$key => $value];
+            $key = array($key => $value);
         }
 
         foreach ($key as $key => $value) {
@@ -157,7 +157,7 @@ class Sesh implements IteratorAggregate
     public function remove($key)
     {
         if (is_string($key)) {
-            $key = [$key];
+            $key = array($key);
         }
 
         foreach ($key as $value) {
@@ -174,7 +174,7 @@ class Sesh implements IteratorAggregate
 
     public function destroy($global = false)
     {
-        $this->data = [];
+        $this->data = array();
 
         if (true === $global) {
             session_destroy();
