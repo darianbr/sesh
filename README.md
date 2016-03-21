@@ -5,7 +5,7 @@ Sesh is a lightweight and simple abstraction layer to PHP Sessions offering mult
 
 ## Current Build Status
 
-[![Build Status](https://travis-ci.org/darianbr/sesh.svg)](https://travis-ci.org/darianbr/sesh)
+[![Build Status](https://travis-ci.org/darianbr/sesh.svg?branch=master)](https://travis-ci.org/darianbr/sesh)
 
 ## Usage Examples
 
