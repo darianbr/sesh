@@ -1,11 +1,18 @@
 language: php
-
 php:
-  - 5.3
-  - 5.4
-  - 5.5
-
+- 5.3
+- 5.4
+- 5.5
+- 5.6
+- 7.0
+matrix:
+  fast_finish: true
+  allow_failures:
+  - php: nightly
 install:
-    - composer install --dev --prefer-dist --no-interaction
+- composer install --prefer-dist --no-interaction
 script:
-    - phpunit -c ./test/suite/phpunit.xml
+- phpunit
+notifications:
+  slack:
+    secure: rNWBZ6mFr3BE0RZql4q/UToeosymx9A8CE9Tf05xNTJn08ha+qaM2Ww0CUNHlDgdC0GJbdLND6wZi949VfKVMILiogZcho68ivq+GPq0VSNYc5AYAKIBs76Yaez1EaoArfh7gQU50rMgi/Kvwe044O7a7aFhDW/hNBc6/oR/D9s=

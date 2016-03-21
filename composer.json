@@ -1,8 +1,11 @@
 {
     "name": "succinct/sesh",
-    "description": "Sesh is an abstraction layer for using, managing and destroying PHP Sessions.",
+    "description": "Sesh is a lightweight and simple abstraction layer to PHP Sessions offering multi-session support. It simplifies the use, creation, and management of sessions as well as adding extra functionality to sessions.",
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5"
     },
     "autoload": {
         "psr-4": {
