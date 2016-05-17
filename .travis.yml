@@ -15,5 +15,6 @@ install:
 script:
 - phpunit
 notifications:
+  email: false
   slack:
     secure: rNWBZ6mFr3BE0RZql4q/UToeosymx9A8CE9Tf05xNTJn08ha+qaM2Ww0CUNHlDgdC0GJbdLND6wZi949VfKVMILiogZcho68ivq+GPq0VSNYc5AYAKIBs76Yaez1EaoArfh7gQU50rMgi/Kvwe044O7a7aFhDW/hNBc6/oR/D9s=
