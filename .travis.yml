@@ -10,10 +10,11 @@ matrix:
   fast_finish: true
   allow_failures:
   - php: nightly
+before_install:
+- phpenv config-rm xdebug.ini
 install:
 - composer install --prefer-dist --no-interaction
 script:
-- phpunit
+- make ci -j 50
 notifications:
-  slack:
-    secure: rNWBZ6mFr3BE0RZql4q/UToeosymx9A8CE9Tf05xNTJn08ha+qaM2Ww0CUNHlDgdC0GJbdLND6wZi949VfKVMILiogZcho68ivq+GPq0VSNYc5AYAKIBs76Yaez1EaoArfh7gQU50rMgi/Kvwe044O7a7aFhDW/hNBc6/oR/D9s=
+  email: true

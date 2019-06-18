@@ -3,9 +3,9 @@
 namespace Succinct\Sesh;
 
 use ArrayObject;
+use InvalidArgumentException;
 use IteratorAggregate;
 use RuntimeException;
-use InvalidArgumentException;
 
 class Sesh implements IteratorAggregate
 {
@@ -185,6 +185,7 @@ class Sesh implements IteratorAggregate
     public function getIterator()
     {
         $ao = new ArrayObject($this->data);
+
         return $ao->getIterator();
     }
 

@@ -11,7 +11,7 @@ class SeshTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->sesh = new Sesh;
+        $this->sesh = new Sesh();
     }
 
     public function testId()
@@ -73,7 +73,7 @@ class SeshTest extends PHPUnit_Framework_TestCase
 
     /**
      * There is no get as array feature, but we want to test that the set with array method
-     * 	is doing its jobs correctly
+     * 	is doing its jobs correctly.
      */
     public function testGetArray()
     {
